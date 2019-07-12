@@ -1,8 +1,11 @@
 package com.example.works2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.view.FrameMetrics;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -77,18 +80,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_perfil) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new perfil()).commit();
+        } else if (id == R.id.nav_solicitudes) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new solicitudes()).commit();
+        } else if (id == R.id.nav_pago) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new pago()).commit();
+        } else if (id == R.id.nav_configuracion) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new configuracion()).commit();
+        } else if (id == R.id.nav_ayuda) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new ayuda()).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
