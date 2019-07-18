@@ -9,12 +9,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_works"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_works"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Post"></activity>
+        <activity android:name=".gasfiteria_cat"></activity>
+        <activity android:name=".electronica_cat" />
+        <activity android:name=".electricidad_cat" />
+        <activity android:name=".contruccion_cat" />
+        <activity android:name=".Post" />
         <activity android:name=".iniciarsesion" />
         <activity android:name=".MainActivity" />
         <activity android:name=".primeros_datos" />
