@@ -56,6 +56,7 @@ public class primeros_datos extends AppCompatActivity {
             public void onClick(View view) {
                 if (validate()) {
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    intent.putExtra("set_fragment", R.id.nav_volvermenu+"");
                     startActivity(intent);
                     Toast.makeText(primeros_datos.this, "Usuario Creado con éxito", Toast.LENGTH_SHORT).show();
                     finish();

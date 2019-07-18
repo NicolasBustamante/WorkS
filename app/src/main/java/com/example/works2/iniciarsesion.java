@@ -31,7 +31,8 @@ public class iniciarsesion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validate()){
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("set_fragment", R.id.nav_volvermenu+"");
                     startActivity(intent);
                     Toast.makeText(iniciarsesion.this,"Sesión iniciada con éxito", Toast.LENGTH_SHORT).show();
                     finish();

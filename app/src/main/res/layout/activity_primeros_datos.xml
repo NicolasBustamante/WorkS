@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".primeros_datos"
-    android:background="@android:color/holo_green_dark">
+    android:background="@android:color/holo_green_light">
 
 
     <TextView
@@ -74,6 +74,7 @@
         android:id="@+id/guardar"
         android:layout_width="290dp"
         android:layout_height="45dp"
+        android:background="@drawable/rounded_button"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"

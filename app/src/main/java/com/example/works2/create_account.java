@@ -39,7 +39,6 @@ public class create_account extends AppCompatActivity {
                 if (validarRegistro()) {
                     Intent intent = new Intent(getApplicationContext(),primeros_datos.class);
                     startActivity(intent);
-                    Toast.makeText(create_account.this,"Cuenta creada con éxito", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
                     Log.d("error", "Error en la validacion");

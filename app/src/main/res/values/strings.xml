@@ -12,6 +12,7 @@
     <string name="menu_slideshow">PAGO</string>
     <string name="menu_tools">CONFIGURACIÓN</string>
     <string name="menu_share">AYUDA</string>
+    <string name="menu_volver">VOLVER A MENU</string>
     <string name="menu_send">Send</string>
     <string name="error_campo_username">Verifique Username</string>
     <string name="error_campo_password">Verifique Contraseña</string>

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".create_account"
-    android:background="@android:color/holo_green_dark">
-
+    android:background="@android:color/holo_green_light">
     <EditText
         android:id="@+id/newusername"
         android:layout_width="336dp"
@@ -93,6 +92,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Registrarme"
+        android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"

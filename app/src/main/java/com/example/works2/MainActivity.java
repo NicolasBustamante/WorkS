@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import com.example.works2.MainActivity;
+
+import android.util.Log;
 import android.view.FrameMetrics;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
@@ -19,11 +23,15 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
+        String fragmentId = getIntent().getStringExtra("set_fragment");
+        Log.d("cualquier wea", fragmentId+"");
         Toolbar toolbar = findViewById(R.id.toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +48,9 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        if (fragmentId != null){
+            setFragment(fragmentId);
+        }
     }
 
     @Override
@@ -80,8 +91,6 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-
         if (id == R.id.nav_perfil) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new perfil()).commit();
         } else if (id == R.id.nav_solicitudes) {
@@ -92,10 +101,33 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.contenedor,new configuracion()).commit();
         } else if (id == R.id.nav_ayuda) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new ayuda()).commit();
+        } else if (id == R.id.nav_volvermenu) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new menu_principal()).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setFragment(String fragmentid){
+        int id = Integer.parseInt(fragmentid);
+
+        if (id == R.id.nav_perfil) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new perfil()).commit();
+        } else if (id == R.id.nav_solicitudes) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new solicitudes()).commit();
+        } else if (id == R.id.nav_pago) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new pago()).commit();
+        } else if (id == R.id.nav_configuracion) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new configuracion()).commit();
+        } else if (id == R.id.nav_ayuda) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new ayuda()).commit();
+        } else if (id == R.id.nav_volvermenu) {
+                fragmentManager.beginTransaction().replace(R.id.contenedor,new menu_principal()).commit();
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }
